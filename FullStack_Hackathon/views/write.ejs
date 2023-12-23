@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>포트폴리오 작성</strong>
+            <p>포트폴리오 작성란입니다.</p>
+        </div>
+        <div class="board_write_wrap">
+            <form action="/upload" method="POST">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text" placeholder="제목 입력" name="title"></dd>
+                    </dl>
+                    <dl>
+                        <dt>한 줄 소개</dt>
+                        <dd><input type="text" placeholder="소개 입력" name="subtitle"></dd>
+                    </dl>
+                </div>
+                <!-- <div class="info">
+                        <dt>글쓴이</dt>
+                        <dd><input type="text" placeholder="글쓴이 입력" name="name"></dd> 
+                    </dl>
+                    <dl>
+                        <dt>비밀번호</dt>
+                        <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                    </dl>
+                </div> -->
+                <div>
+                    <p>Profile</p>
+                    <div class="input-box">
+                        <dl>
+                            <dd><input type="text" placeholder="학력 입력" name="school" class="input-field"></dd>
+                        </dl>
+                    </div>
+                    <div class="input-box">
+                        <dd><input type="text" placeholder="경력 입력" name="career" class="input-field"></dd>
+                    </div>
+                    <div class="input-box">
+                        <dd><input type="text" placeholder="외국어 능력 및 자격증 입력" name="lang" class="input-field"></dd>
+                    </div>
+                    <div class="input-box">
+                        <dd><input type="text" placeholder="기타 정보 입력" name="etc" class="input-field"></dd>
+                    </div>
+                </div>
+                <div class="cont">
+                    <textarea placeholder="내용 입력" name="body"></textarea>
+                </div>
+                <div>
+                    <p>About Me</p>
+                    <div class="input-box">
+                        <dt class="input-label">github</dt>
+                        <dd><input type="text" placeholder="깃허브 주소 입력" name="github" class="input-field"></dd>
+                    </div>
+                    <div class="input-box">
+                        <dt class="input-label">else</dt>
+                        <dd><input type="text" placeholder="블로그 및 기타 자료 입력" name="blog" class="input-field"></dd>
+                    </div>
+                </div>
+                <div>
+                    <p>Contact Me</p>
+                    <div class="input-box">
+                        <dt class="input-label">email</dt>
+                        <dd><input type="email" placeholder="이메일 주소 입력" name="email" class="input-field"></dd>
+                    </div>
+                    <div class="input-box">
+                        <dt class="input-label">else</dt>
+                        <dd><input type="text" placeholder="전화번호 입력" name="phone" class="input-field"></dd>
+                    </div>
+                </div>
+                <div class="access">
+                    <select name="access" id="dropbox">
+                        <option value="1" selected>공개</option>
+                        <option value="0">비공개</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                    <button>등록</button>
+                    <a href="/main">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

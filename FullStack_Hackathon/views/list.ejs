@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_tit">
+            <strong>My Post</strong>
+            <p>작성한 게시물을 목록으로 보여드립니다.</p>
+        </div>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="title">제목</div>
+                    <div class="writer">글쓴이</div>
+                    <div class="date">작성일</div>
+                    <div class="count">조회수</div>
+                    <div class="likes">좋아요</div>
+                </div>
+
+                <% if (!posts || posts.length === 0) { %>
+                    <p>작성된 포트폴리오가 없습니다.</p>
+                  <% } else { %>
+                        <ol id="posts-list">
+                          <% for (const post of posts) { %>
+                            <li>
+                                <div>
+                                    <div class="title"><a href='/view/<%= post.id %>'><%= post.title %></a></div>
+                                    <div class="writer"><%= post.user_name %></div>
+                                    <div class="date"><%= post.created_at %></div>
+                                    <div class="count"><%= post.count %></div>
+                                    <div class="likes"><%= post.likes %></div>
+                                </div>
+                            </li>
+                          <% } %>
+                        </ol>
+                  <% } %>
+            </div>
+            <div class="board_page">
+                <a href="#" class="bt first"><<</a>
+                <a href="#" class="bt prev"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">></a>
+                <a href="#" class="bt last">>></a>
+            </div>
+            <div class="bt_wrap">
+                <form action="/write" method="GET">
+                    <button>등록</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

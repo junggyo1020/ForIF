@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>포트폴리오 작성</strong>
+            <p>작성한 포트폴리오를 보여줍니다.</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    <%= post.title %>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd><%= post.user_name %></dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd><%= post.human_date %></dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd><%= post.count %></dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <%= post.body %>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="/main" class="on">목록</a>
+                <form action="/edit/<%= post.id %>" method="POST"><button>수정</button></form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
