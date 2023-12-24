@@ -102,19 +102,19 @@ router.post('/upload', async function(req, res) {
     const postData = req.body;
 
     const query = `
-    insert into post (title, subTitle, access, body, userId, likes, count)
+    insert into post (title, subTitle, access, body, userId, \`like\`, count)
     values (?,?,?,?,?,?,?)`;
 
     console.log(postData);
 
     await db.query(query, [
         postData.title,
-        postData.subtitle,
+        postData.subTitle,
         postData.access,
         postData.body,
         req.session.user.userId,
         0,
-        0 
+        0
     ]);
 
     res.redirect('/main');
